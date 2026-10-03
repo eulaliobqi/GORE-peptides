@@ -1,0 +1,30 @@
+# Limiares de QC pré-registrados em 30/09/2026, ANTES de abrir qualquer resultado do lote.
+# Valores padrão de literatura/prática (validação cristalográfica MolProbity; geometria da tríade de serina-proteases).
+# Alterar depois de ver os dados exige registrar a mudança no documento vivo.
+receptor:
+  mean_plddt_min: 90          # Boltz reporta pLDDT 0-100
+  pocket_plddt_min: 90        # resíduos a <= 10 A do OG da Ser195
+  tm_score_vs_1BTY_min: 0.90  # tripsina bovina cristalográfica (referência)
+  s1_ca_rmsd_max_A: 1.0       # Calfa do bolsão S1 vs 1BTY, após alinhamento global
+  his57_ND1_asp102_OD_max_A: 3.3
+  his57_NE2_ser195_OG_max_A: 3.8
+  disulfides: n_ss_igual_floor_ncys_div_2  # SG-SG 1,9-2,2 A (EMENDA 30/09, ver abaixo)
+  rama_favored_min_pct: 95
+  rama_outliers_max_pct: 1
+  clashscore_max: 10
+pose:
+  severe_clash_pairs_max: 0   # pares de átomos pesados peptídeo-receptor < 2,2 A
+  chirality: all_L            # mesmo sinal quiral do receptor (L)
+  omega_trans_min_abs_deg: 150  # ômega |>=150| (trans); cis fora do padrão
+  receptor_triad_kept: true   # mesmos limites de tríade do receptor
+  affinity_pose_note: "afinidade do Boltz-2 e reportada com aviso: falhou na validacao ordinal de 12/08 (n=3)"
+contact:
+  cutoff_A: 4.5
+  s1_occupied_A: 4.5          # P1 basico (Nz Lys / CZ,NH Arg) a <= 4,5 A de Asp189 OD1/OD2
+cluster:
+  pose_rmsd_A: 2.0
+
+emendas:
+  - data: 2026-09-30
+    apos_ver: "QC dos receptores (Ag tem 7 Cys: 3 dissulfetos + 1 Cys livre); ANTES de qualquer complexo"
+    mudanca: "criterio de dissulfetos: de 'todas as Cys pareadas' para 'n_ss = floor(n_Cys/2)' (Cys livre e plausivel em tripsina de inseto; nao e falha do modelo)"

@@ -1,0 +1,55 @@
+n complexos com afinidade: 94
+
+(1) ALVOS x NEGATIVOS (y = log10 IC50 em uM; menor = mais forte; pb = probabilidade de ligante)
+  Ag: y alvos 0.77+-0.54 | negativos 1.56 | AUC(y menor em alvos) 0.73 | pb alvos 0.62 negativos 0.21 | AUC(pb) 0.92
+     benzamidina: y=1.76 pb=0.70
+  Sf: y alvos 0.90+-0.72 | negativos 1.73 | AUC(y menor em alvos) 0.81 | pb alvos 0.84 negativos 0.21 | AUC(pb) 1.00
+     benzamidina: y=1.83 pb=0.62
+  Bov: y alvos 1.34+-0.73 | negativos 1.90 | AUC(y menor em alvos) 0.69 | pb alvos 0.67 negativos 0.15 | AUC(pb) 1.00
+     benzamidina: y=1.60 pb=0.78
+
+(2) ORDEM G2 > L01 (Ki experimental 0,10 mM vs 4,00 mM; previsto correto se y(G2) < y(L01))
+  Ag: y(G2)=0.18 y(L01)=-0.24 dif=+0.42 -> INVERTIDO | pb G2=0.95 L01=0.38
+     G1: y=0.53 (Ki experimental de G1 ainda nao extraido)
+  Sf: y(G2)=-0.36 y(L01)=0.68 dif=-1.04 -> CORRETO | pb G2=0.98 L01=0.69
+     G1: y=0.55 (Ki experimental de G1 ainda nao extraido)
+  Bov: y(G2)=0.82 y(L01)=0.42 dif=+0.40 -> INVERTIDO | pb G2=0.91 L01=0.30
+     G1: y=1.54 (Ki experimental de G1 ainda nao extraido)
+
+(3) EFEITO DO D189G (13 alvos, pareado nativo -> mutante; esperado: y sobe = afinidade cai)
+  Ag: n=13 dy medio +0.73 (IC95 boot [0.48 0.97]) Wilcoxon p=0.0007; pb 0.62 -> 0.44
+  Sf: n=13 dy medio +0.63 (IC95 boot [0.33 0.96]) Wilcoxon p=0.0046; pb 0.84 -> 0.73
+
+(4) CONCORDANCIA ENTRE OS 2 MODELOS DO ENSEMBLE (y1 vs y2, todos os complexos)
+  Spearman 0.58 (p=7.5e-10, n=94); media |y1-y2| = 0.86
+
+(5) AFINIDADE x ipSAE (alvos, por receptor)
+  Ag: Spearman(y, ipSAE) = -0.14 (p=0.655, n=13); negativo = afinidade prevista mais forte com ipSAE maior
+  Sf: Spearman(y, ipSAE) = -0.40 (p=0.181, n=13); negativo = afinidade prevista mais forte com ipSAE maior
+  Bov: Spearman(y, ipSAE) = -0.35 (p=0.247, n=13); negativo = afinidade prevista mais forte com ipSAE maior
+
+(6) AFINIDADE x ClusPro (energia mais negativa = melhor; positivo = concorda)
+  Ag score_center: rho=+0.92 (p=0.000, n=11)
+  Ag lowest_energy: rho=+0.82 (p=0.002, n=11)
+  Sf score_center: rho=+0.35 (p=0.298, n=11)
+  Sf lowest_energy: rho=+0.45 (p=0.170, n=11)
+  Bov score_center: rho=+0.29 (p=0.385, n=11)
+  Bov lowest_energy: rho=+0.43 (p=0.190, n=11)
+
+(7) RANKING DE AFINIDADE DOS ALVOS (y; menor = mais forte)
+  Ag: L01:-0.24 G2:0.18 L03:0.44 L07:0.52 G1:0.53 L04:0.55 L02:0.59 L10:0.79 L09:0.90 L06:1.31 L08:1.36 L11:1.46 L05:1.61
+  Sf: G2:-0.36 L03:0.15 L09:0.25 L02:0.52 L06:0.54 G1:0.55 L01:0.68 L08:0.90 L10:1.34 L04:1.65 L07:1.69 L05:1.74 L11:1.97
+  Bov: L03:0.32 L02:0.39 L01:0.42 G2:0.82 L09:1.03 L06:1.09 L08:1.50 G1:1.54 L05:1.67 L04:1.73 L10:1.98 L11:2.31 L07:2.61
+  Pig (cristalograficos + benzamidina): BEN:1.54/pb0.79 X1:1.58/pb0.46 X2:1.14/pb0.52 X3:2.21/pb0.43
+
+(8) VIES DE TAMANHO: afinidade prevista x comprimento do peptideo (so o comprimento entra no texto; sequencias ficam em data/private)
+  Ag: Spearman(y, comprimento) = -0.24 (p=0.426, n=13); negativo = peptideo maior tem afinidade prevista mais forte
+     Spearman(ipSAE, comprimento) = -0.02 (p=0.953)
+     ClusPro x afinidade, bruto rho=+0.82; parcial controlando comprimento r=+0.76 (p=0.006, n=11)
+  Sf: Spearman(y, comprimento) = -0.21 (p=0.500, n=13); negativo = peptideo maior tem afinidade prevista mais forte
+     Spearman(ipSAE, comprimento) = +0.25 (p=0.402)
+     ClusPro x afinidade, bruto rho=+0.45; parcial controlando comprimento r=+0.20 (p=0.553, n=11)
+  Bov: Spearman(y, comprimento) = -0.61 (p=0.028, n=13); negativo = peptideo maior tem afinidade prevista mais forte
+     Spearman(ipSAE, comprimento) = +0.24 (p=0.438)
+     ClusPro x afinidade, bruto rho=+0.43; parcial controlando comprimento r=-0.17 (p=0.613, n=11)
+  ClusPro (lowest energy) x comprimento: rho=+0.69 (p=0.019, n=11); positivo = peptideo maior tem energia mais favoravel

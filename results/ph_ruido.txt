@@ -1,0 +1,32 @@
+S: 188 afinidades; sementes [101, 102]
+C82: 102 afinidades; sementes [101, 102]
+C10: 102 afinidades; sementes [101, 102]
+
+== Δ(pH) vs ruído entre sementes (ΔG, kcal/mol) ==
+Ag: Δ(pH C10-C82) n=13 média=-0.05 DP=0.53 |Δ| mediano=0.23 Wilcoxon p=0.685
+    preservação da ordem entre C82 e C10: rho=0.74
+Sf: Δ(pH C10-C82) n=13 média=-0.19 DP=0.33 |Δ| mediano=0.25 Wilcoxon p=0.068
+    preservação da ordem entre C82 e C10: rho=0.92
+Bov: Δ(pH C10-C82) n=13 média=-0.12 DP=0.40 |Δ| mediano=0.22 Wilcoxon p=0.635
+    preservação da ordem entre C82 e C10: rho=0.90
+ruído C82 (semente 102 vs 101, alvos): n=39 |Δ| mediano=0.05 DP(Δ)=0.12; rho entre sementes=0.98
+ruído C10 (semente 102 vs 101, alvos): n=39 |Δ| mediano=0.05 DP(Δ)=0.07; rho entre sementes=0.99
+variante C10Kn (Lys neutra) - C10: n=15 média=+0.38 DP=0.47 max|Δ|=0.95
+variante C10Ym (Tyr fenolato) - C10: n=9 média=+0.14 DP=0.50 max|Δ|=0.75
+
+== controles de leitura ==
+S     Ag  G2=-7.94 L01=-8.52 ordem G2>L01 INVERTIDA | alvos=-7.14 negativos=-6.05 separação=+1.09
+S     Sf  G2=-8.68 L01=-7.25 ordem G2>L01 correta | alvos=-6.96 negativos=-5.82 separação=+1.14
+S     Bov G2=-7.07 L01=-7.61 ordem G2>L01 INVERTIDA | alvos=-6.36 negativos=-5.59 separação=+0.77
+C82   Ag  G2=-8.11 L01=-8.01 ordem G2>L01 correta | alvos=-7.07 negativos=-5.94 separação=+1.14
+C82   Sf  G2=-8.86 L01=-7.20 ordem G2>L01 correta | alvos=-6.90 negativos=-5.49 separação=+1.41
+C82   Bov G2=-7.29 L01=-7.48 ordem G2>L01 INVERTIDA | alvos=-6.47 negativos=-4.95 separação=+1.53
+C10   Ag  G2=-8.15 L01=-7.79 ordem G2>L01 correta | alvos=-7.12 negativos=-5.78 separação=+1.35
+C10   Sf  G2=-8.94 L01=-7.36 ordem G2>L01 correta | alvos=-7.09 negativos=-5.43 separação=+1.66
+C10   Bov G2=-7.23 L01=-8.45 ordem G2>L01 INVERTIDA | alvos=-6.59 negativos=-5.06 separação=+1.54
+
+== Mapa <5 Å: consenso (freq>=0,5) em C82 vs C10 ==
+Ag: Jaccard médio=0.93 (mín 0.74); resíduos que mais mudam (nº de ligantes): 41(4), 221(3), 96(2), 172(2), 194(2), 193(2)
+Bov: Jaccard médio=0.95 (mín 0.86); resíduos que mais mudam (nº de ligantes): 228(3), 172(2), 217(2), 175(2), 102(1), 226(1)
+Sf: Jaccard médio=0.94 (mín 0.75); resíduos que mais mudam (nº de ligantes): 42(3), 227(3), 173(2), 146(2), 98(2), 97(2)
+Sem baseline de ruído por semente para o mapa: mudanças de 1-2 resíduos com freq perto de 0,5 não são interpretáveis.

@@ -1,0 +1,6 @@
+# Sequências dos peptídeos nunca entram no repositório
+data/private/
+peptides-gore.jpeg
+*.a3m
+work/
+.nextflow*
